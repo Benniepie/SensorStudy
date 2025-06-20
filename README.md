@@ -48,13 +48,12 @@ After installation (either via HACS or manually) and restarting Home Assistant:
     *   Go to **Settings > Devices & Services** in Home Assistant.
     *   Click **+ ADD INTEGRATION**.
     *   Search for "Notification Catcher" and select it.
-    *   A new sensor entity named `sensor.last_notification` (or similar, depending on your entity naming) will be created.
+    *   Follow the on-screen prompts. Since there are no configuration options in this version, it should be a simple confirmation step.
+2.  **Sensor Creation:**
+    *   Once added, a sensor entity named `sensor.last_notification` (or similar, depending on your entity naming conventions and if you rename it) will be created.
+    *   This sensor listens to the hardcoded MQTT topic: `notification_catcher/notify`.
 
-    *(Self-correction: The current `__init__.py` and `sensor.py` structure will automatically set up the sensor upon HA start if MQTT is configured. A config flow isn't strictly implemented yet for setting the MQTT topic, so the integration might not appear in "Add Integration" search immediately unless we add a `config_flow.py`. For now, the sensor should appear automatically after restart once the component is installed, using the default topic.)*
-
-    **Revised Configuration Note:**
-    The component currently uses a hardcoded MQTT topic: `notification_catcher/notify`.
-    Once the component is installed and Home Assistant is restarted, the `sensor.last_notification` entity should become available automatically, provided your MQTT integration is correctly set up in Home Assistant. No further UI configuration for the component itself is needed at this stage.
+Your Home Assistant instance must have the MQTT integration configured and connected to your MQTT broker for this component to function.
 
 ## Sending Notifications
 
