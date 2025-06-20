@@ -1,0 +1,5 @@
+{
+  "name": "Notification Catcher",
+  "render_readme": true,
+  "domains": ["sensor"]
+}
